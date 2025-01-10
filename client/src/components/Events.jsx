@@ -9,10 +9,13 @@ import event5 from "/event5.jpg";
 import event6 from "/event6.webp";
 
 // EventDetail component displays detailed information about a selected event
-const EventDetail = ({ event, onBack }) => {
+const EventDetail = ({ event, onBack, onRegister }) => {
   const handleRegister = () => {
-    alert("Registered successfully!");
+    console.log("Register button clicked for event:", event.name);
+    onRegister(event.name)
+    alert('Successfully Register'); // Pass the event title to the parent
   };
+
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
@@ -130,7 +133,7 @@ const EventCard = ({ event, onClick }) => (
 );
 
 // Main Events component to list all events
-const Events = () => {
+const Events = ({ onRegister }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
   const eventsData = [
@@ -201,9 +204,10 @@ const Events = () => {
       learnMoreUrl: "https://www.sfe.net.in/conf/index.php?id=3115411",
     },
   ];
+  console.log("Selected event in Events:", selectedEvent);
 
   if (selectedEvent) {
-    return <EventDetail event={selectedEvent} onBack={() => setSelectedEvent(null)} />;
+    return <EventDetail event={selectedEvent}  onRegister={onRegister} onBack={() => setSelectedEvent(null)} />;
   }
 
   return (

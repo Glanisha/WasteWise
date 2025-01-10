@@ -30,11 +30,7 @@ const Navbar = () => {
         { name: 'Hazardous', path: '/segregate/hazardous' }
       ]
     },
-    {
-      name: 'Profile',
-      icon: <User className="w-5 h-5" />,
-      path: '/profile'
-    }
+      
   ];
 
   return (

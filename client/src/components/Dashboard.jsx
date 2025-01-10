@@ -1,12 +1,13 @@
-import React from "react";
 import Carousel from "./Carousel";
-import CustomCard from "./Card";
+import PersonalInfo from "./PersonalInfo";
 
-const Dashboard = () => {
+const Dashboard = ({ registeredEvents }) => {
+  console.log("Registered events received in Dashboard:", registeredEvents);
+
   return (
     <div>
       <Carousel />
-
+      <PersonalInfo registeredEvents={registeredEvents} />
     </div>
   );
 };
