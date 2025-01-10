@@ -5,7 +5,7 @@ const PersonalInfo = ({ registeredEvents }) => {
   console.log("Registered events received in PersonalInfo:", registeredEvents);
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
+    <div className="p-6 bg-white rounded-lg shadow-md mt-6">
       <div className="flex items-center gap-2 mb-4">
         <Calendar className="h-5 w-5" />
         <h1 className="text-xl font-semibold">Your Events Registered</h1>

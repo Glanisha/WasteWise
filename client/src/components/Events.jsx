@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Calendar, MapPin, Award, ArrowLeft, Clock, Users, ExternalLink } from "lucide-react";
-
+import axios from "axios";
 import event1 from "/event1.jpg";
 import event2 from "/event2.jpg";
 import event3 from "/event3.jpg";
@@ -10,10 +10,28 @@ import event6 from "/event6.webp";
 
 // EventDetail component displays detailed information about a selected event
 const EventDetail = ({ event, onBack, onRegister }) => {
-  const handleRegister = () => {
-    console.log("Register button clicked for event:", event.name);
-    onRegister(event.name)
-    alert('Successfully Register'); // Pass the event title to the parent
+  const handleRegister = async () => {
+    try {
+      console.log("Register button clicked for event:", event.name);
+
+      // POST request to the Django server
+      await axios.post("http://127.0.0.1:8000/api/events/", {
+        name: "Event Registered",
+        reason: event.name, // Event name as the reason
+        points: 50,
+        timestamp: new Date().toISOString(),
+      });
+      console.log("Event registration logged successfully.");
+
+      // GET request to the Node.js server
+      await axios.get("http://localhost:4000/add-points");
+      console.log("Points updated successfully via Node.js server.");
+
+      alert("Successfully Registered");
+      onRegister(event.name); // Notify parent component about registration
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
   };
 
 

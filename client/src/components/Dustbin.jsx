@@ -62,10 +62,7 @@ const Dustbin = () => {
 
     const animateGarbage = () => {
       garbageList.current.forEach((garbage, index) => {
-        // Simulate gravity by moving garbage downward slower
-        garbage.position.y -= 0.145; // Slow falling for smooth animation
-
-        // Check if garbage has fallen into the dustbin
+        garbage.position.y -= 0.195; // Slow falling for smooth animation
         if (garbage.position.y < -4.5) {
           scene.remove(garbage); // Remove garbage from the scene
           garbageList.current.splice(index, 1); // Remove from the list
@@ -73,14 +70,9 @@ const Dustbin = () => {
       });
     };
 
-    const clock = new THREE.Clock();
-
     const animate = () => {
       requestAnimationFrame(animate);
-
-      // Animate the garbage items
       animateGarbage();
-
       renderer.render(scene, camera);
     };
 
@@ -116,26 +108,20 @@ const Dustbin = () => {
       "/garbage_bag/scene.gltf", // Path to the garbage model
       (gltf) => {
         const garbage = gltf.scene;
-
-        // Adjust garbage size and initial position
         garbage.scale.set(5, 5, 5); // Make garbage much larger
         garbage.position.set(
           Math.random() * 2 - 1, // Random X near the center
           15, // High enough for falling effect
           Math.random() * 2 - 1 // Random Z near the center
         );
-
-        // Add shadows to garbage
         garbage.traverse((child) => {
           if (child.isMesh) {
             child.castShadow = true;
             child.receiveShadow = true;
           }
         });
-
-        // Add garbage to the scene
         scene.add(garbage);
-        garbageList.current.push(garbage); // Track garbage items in the list
+        garbageList.current.push(garbage);
       },
       undefined,
       (error) => {
@@ -143,37 +129,60 @@ const Dustbin = () => {
       }
     );
 
-    // Call the server to add points
+    // Log event to Django backend
+    try {
+      await axios.post("http://127.0.0.1:8000/api/events/", {
+        name: "Trash Dumped",
+        reason: "Trash Dumping",
+        points: 20,
+        timestamp: new Date().toISOString(),
+      });
+      console.log("Event logged successfully.");
+    } catch (error) {
+      console.error("Error logging event:", error);
+    }
+
+    // Update points on Node.js server
     try {
       await axios.get("http://localhost:4000/add-points");
-      console.log("Points updated successfully");
+      console.log("Points updated successfully.");
     } catch (error) {
-      console.error("Error calling server:", error);
+      console.error("Error updating points:", error);
     }
   };
 
   return (
-    <div
-      ref={mountRef}
-      style={{
-        width: "100%",
-        height: "700px", // Increased height for better visibility
-        cursor: isLoading ? "default" : "pointer",
-      }}
-      onClick={handleClick}
-    >
-      {isLoading && (
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          Loading model...
-        </div>
-      )}
+    <div>
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "10px",
+        }}
+      >
+        
+      </h1>
+      <div
+        ref={mountRef}
+        style={{
+          width: "100%",
+          height: "700px",
+          cursor: isLoading ? "default" : "pointer",
+        }}
+        onClick={handleClick}
+      >
+        {isLoading && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            Loading model...
+          </div>
+        )}
+      </div>
     </div>
   );
 };

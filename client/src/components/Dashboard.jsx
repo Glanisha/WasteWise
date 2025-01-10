@@ -1,14 +1,17 @@
 import Carousel from "./Carousel";
 import PersonalInfo from "./PersonalInfo";
-import EventList from "./EventList";
+
+import UserComponent from "./UserComponent";
 const Dashboard = ({ registeredEvents }) => {
   console.log("Registered events received in Dashboard:", registeredEvents);
 
   return (
     <div>
-      <Carousel />
+      <UserComponent />
       <PersonalInfo registeredEvents={registeredEvents} />
-      <EventList />
+      <Carousel />
+     
+      
     </div>
   );
 };

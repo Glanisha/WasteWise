@@ -12,12 +12,12 @@ class EventListCreateView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = EventSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+     serializer = EventSerializer(data=request.data)
+     if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+     print(serializer.errors)  # Log the errors to help debug
+     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class EventDetailView(APIView):
     def get(self, request, pk):
@@ -52,7 +52,6 @@ class CreateEventView(APIView):
     """
     Dedicated view to add new events.
     """
-
     def post(self, request):
         serializer = EventSerializer(data=request.data)
         if serializer.is_valid():
