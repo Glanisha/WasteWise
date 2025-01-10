@@ -1,0 +1,317 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.20279066264629364,
+        0.4628039002418518,
+        0.21968460083007813
+      ],
+      "min": [
+        -0.2194814532995224,
+        0.0014223456382751465,
+        -0.21739289164543152
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 157656,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.9995673894882202,
+        0.9999743700027466,
+        0.9998858571052551
+      ],
+      "min": [
+        -0.9999715685844421,
+        -0.9999805092811584,
+        -0.9997001886367798
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.9979446530342102,
+        0.9997678399085999,
+        0.9997154474258423,
+        1.0
+      ],
+      "min": [
+        -0.9999894499778748,
+        -0.992565929889679,
+        -0.9995388388633728,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.9992380142211914,
+        0.8857281804084778
+      ],
+      "min": [
+        0.0007619591196998954,
+        0.0007619407842867076
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 105104,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.9992380142211914,
+        0.8857281804084778
+      ],
+      "min": [
+        0.0007619591196998954,
+        0.0007619407842867076
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 210208,
+      "componentType": 5126,
+      "count": 13138,
+      "max": [
+        0.9992380142211914,
+        0.8857281804084778
+      ],
+      "min": [
+        0.0007619591196998954,
+        0.0007619407842867076
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 66972,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Eydeet (https://sketchfab.com/eydeet)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/garbage-bag-fe19781220b5456a878ce9ae8cfefc74",
+      "title": "Garbage Bag"
+    },
+    "generator": "Sketchfab-15.61.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 267888,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 315312,
+      "byteOffset": 267888,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 315312,
+      "byteOffset": 583200,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 210208,
+      "byteOffset": 898512,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1108720,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/base_material_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/base_material_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/base_material_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "base_material",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "garbage_bag_base_material_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776482582,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "839652636dab4d60a95ee7c886736a6c.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        216.4466094970703,
+        8.49346536940443e-16,
+        -7.505378001594687e-18,
+        0.0,
+        -8.493465350201211e-16,
+        216.41280809263532,
+        -3.825082513808514,
+        0.0,
+        -7.505595311784715e-18,
+        3.825082513808514,
+        216.41280809263532,
+        0.0,
+        0.0,
+        5.9604644775390625e-06,
+        0.0,
+        1.0
+      ],
+      "name": "garbage_bag"
+    },
+    {
+      "mesh": 0,
+      "name": "garbage_bag_base_material_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
