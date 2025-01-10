@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors'); // Import cors package
+const cors = require('cors'); 
 
 const { initializeApp } = require("firebase/app");
 const { getDatabase, ref, get, update } = require("firebase/database");
