@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, AlertTriangle, PieChart, User, Trash2, ChevronDown } from 'lucide-react';
+import { Menu, X, Home, AlertTriangle, PieChart, User, Trash2, ChevronDown,Award } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +22,11 @@ const Navbar = () => {
       path: '/events'
     },
     {
+      name: 'Simulation',
+      icon: <Trash2 className="w-5 h-5" />,
+      path: '/simulation'
+    },
+    {
       name: 'Segregate',
       icon: <Trash2 className="w-5 h-5" />,
       dropdownItems: [
@@ -29,6 +34,11 @@ const Navbar = () => {
         { name: 'Recyclable', path: '/segregate/recyclable' },
         { name: 'Hazardous', path: '/segregate/hazardous' }
       ]
+    },
+    {
+      name: 'Points',
+      icon: <Award className="w-5 h-5" />,
+      path: '/reedem-points'
     },
       
   ];

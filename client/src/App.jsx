@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import Events from "./components/Events";
 import PersonalInfo from "./components/PersonalInfo";
+import EventList from "./components/EventList";
+import Simulation from "./components/Simulation";
 
 function App() {
   const [registeredEvents, setRegisteredEvents] = useState(() => {
@@ -50,6 +52,14 @@ function App() {
           <Route
             path="/personal-info"
             element={<PersonalInfo registeredEvents={registeredEvents} />}
+          />
+             <Route
+            path="/reedem-points"
+            element={<EventList />}
+          />
+          <Route
+            path="/simulation"
+            element={<Simulation />}
           />
         </Routes>
       </div>
