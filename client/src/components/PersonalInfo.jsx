@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Calendar, Dot } from 'lucide-react';
 
 const PersonalInfo = ({ registeredEvents }) => {
