@@ -8,6 +8,7 @@ import Events from "./components/Events";
 import PersonalInfo from "./components/PersonalInfo";
 import EventList from "./components/EventList";
 import Simulation from "./components/Simulation";
+import RoutePage from "./components/RoutePage";
 
 function App() {
   const [registeredEvents, setRegisteredEvents] = useState(() => {
@@ -60,6 +61,10 @@ function App() {
           <Route
             path="/simulation"
             element={<Simulation />}
+          />
+          <Route
+            path="/routeoptimization"
+            element={<RoutePage/>}
           />
         </Routes>
       </div>

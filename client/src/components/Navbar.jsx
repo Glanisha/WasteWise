@@ -14,7 +14,7 @@ const Navbar = () => {
     {
       name: 'Report Bin',
       icon: <AlertTriangle className="w-5 h-5" />,
-      path: 'http://localhost:5177/'
+      path: '/routeoptimization'
     },
     {
       name: 'Events',

@@ -1,6 +1,10 @@
 from django.contrib import admin
 from .models import Event
+from .models import Bin
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     list_display = ('name', 'points', 'timestamp', 'reason')  # Replace 'location' with 'reason'
+
+
+admin.site.register(Bin)

@@ -51,13 +51,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-     'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Allow React development server
     "http://127.0.0.1:3000",  
-     "http://localhost:5173",
+    "http://localhost:5173",
+    "http://localhost:3000",  # Your frontend URL
+    "https://yourfrontenddomain.com", 
+    "http://localhost:5176"
 ]
 
 CORS_ALLOW_HEADERS = [
@@ -142,3 +145,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'  # or a specific path you want to store your files
+
